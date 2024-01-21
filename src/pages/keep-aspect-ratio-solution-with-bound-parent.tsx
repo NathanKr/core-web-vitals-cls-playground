@@ -20,8 +20,8 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
       <h1>{ETab.keepAspectRatio}</h1>
       <h2>
         <Alert severity="warning">
-          Use next.js Image with fill (width \ height not used) ==&gt; CLS ok
-          but strange height and 'best practice' issue
+          Use next.js Image with fill (width \ height not used) =={">"} CLS ok
+          but strange height and &quot;best practice&quot; issue
         </Alert>
       </h2>
       <div
