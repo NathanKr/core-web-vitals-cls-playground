@@ -3,7 +3,7 @@ import React from "react";
 const ClsProblem = () => {
   return (
     <>
-    <h2>imj without width\height ==> check on vercel and see cls problem (why not locally ?)</h2>
+    <h2>imj without width\height =={">"} check on vercel and see cls problem (why not locally ?)</h2>
       <img src="/lion-3576045_1280.jpg" />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
