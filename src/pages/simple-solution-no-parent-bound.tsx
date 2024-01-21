@@ -1,3 +1,4 @@
+import ETab from "@/types/tab";
 import {
   LION_IMG,
   LION_IMG_HEIGHT_PX,
@@ -9,10 +10,12 @@ import { Alert } from "@mui/material";
 const SimpleSolutionNoParentBound = () => {
   return (
     <>
+      <h1>{ETab.simpleSolution}</h1>
       <h2>
-        <Alert severity='warning'>img with width\height but no parent bound =={">"} check on vercel and see no
-        CLS problem</Alert>
-        
+        <Alert severity="warning">
+          img with width\height but no parent bound =={">"} check on vercel and
+          see no CLS problem
+        </Alert>
       </h2>
       <img
         src={`/${LION_IMG}`}

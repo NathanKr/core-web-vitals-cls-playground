@@ -1,11 +1,16 @@
-import Tab from "@/types/tab";
+import ETab from "@/types/tab";
 import Link from "next/link";
+import styles from "@/styles/top.module.css";
 
 const Top = () => {
-  const tabsValues: string[] = Object.values(Tab);
-  const elemsLink = tabsValues.map((tab,i) => <Link key={i} href={`/${tab}`}>{tab}</Link>)
+  const tabsValues: string[] = Object.values(ETab);
+  const elemsLink = tabsValues.map((tab, i) => (
+    <Link key={i} href={`/${tab}`}>
+      {tab}
+    </Link>
+  ));
 
-  return <>{elemsLink}</>;
+  return <div className={styles.container_top}>{elemsLink}</div>;
 };
 
 export default Top;

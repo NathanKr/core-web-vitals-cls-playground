@@ -1,3 +1,4 @@
+import ETab from "@/types/tab";
 import {
   LION_IMG,
   LION_IMG_HEIGHT_PX,
@@ -8,12 +9,16 @@ import { Alert } from "@mui/material";
 
 const UiProblemWithBoundingParent = () => {
   return (
-    <div style={{width:'400px'}}>
+    <div style={{ width: "400px" }}>
+      <h1>{ETab.uiProblemWithBoundParent}</h1>
       <h2>
-        <Alert severity='warning'>img with width\height but parent bounding the width =={">"} check on vercel and see no
-        CLS problem but UI distorted</Alert>
+        <Alert severity="warning">
+          img with width\height but parent bounding the width =={">"} check on
+          vercel and see no CLS problem but UI distorted
+        </Alert>
       </h2>
-      <img style={{width:'100%'}}
+      <img
+        style={{ width: "100%" }}
         src={`/${LION_IMG}`}
         width={LION_IMG_WIDTH_PX}
         height={LION_IMG_HEIGHT_PX}
