@@ -4,12 +4,13 @@ import {
   LION_IMG_HEIGHT_PX,
   LION_IMG_WIDTH_PX,
   LOREM_100_STRING,
+  PARENT_WITH_PX,
 } from "@/utils/constants";
 import { Alert } from "@mui/material";
 
 const UiProblemWithBoundingParent = () => {
   return (
-    <div style={{ width: "400px" }}>
+    <div style={{ maxWidth: `${PARENT_WITH_PX}px` }}>
       <h1>{ETab.uiProblemWithBoundParent}</h1>
       <h2>
         <Alert severity="warning">

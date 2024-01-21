@@ -3,7 +3,6 @@
 
 <h2>Leading questions</h2>
 So here are few questions that answers can shed light on this metric
-
 <ol>
 <li>how to create a page with cls problem using image</li>
 <li>how to solve it by providing width and height ==> brut force might not always be enough</li>

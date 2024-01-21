@@ -8,8 +8,14 @@ const ClsProblem = () => {
       <h1>{ETab.proplem}</h1>
       <h2>
         <Alert severity="error">
-          img without width\height =={">"} check on vercel and see CLS problem
-          especially for mobile(why not locally ?)
+          <p>
+            img without width\height =={">"} check on vercel and see CLS problem
+            especially for mobile
+          </p>
+          <p>
+            locally the CLS is zero ! may be because the time to download the
+            image is fast because its done locally
+          </p>
         </Alert>
       </h2>
       <img src={`/${LION_IMG}`} />
