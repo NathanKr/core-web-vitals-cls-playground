@@ -10,7 +10,7 @@ import {
 import { Alert } from "@mui/material";
 
 const KeepAspectRatioSolutionWithBoundParent = () => {
-  const aspectRatio = 1 / LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX;
+  const aspectRatio = LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX;
   const paddingTopPercentage = `${(100 * 1) / aspectRatio}%`;
   console.log(paddingTopPercentage);
   
@@ -19,11 +19,12 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
     <>
       <h1>{ETab.keepAspectRatio}</h1>
       <h2>
-        <Alert severity="warning">
-          Use next.js Image with fill (width \ height not used) =={">"} CLS ok
-          but strange height and &quot;best practice&quot; issue
+        <Alert severity="error">
+          Use next.js Image with fill , and relative\absolute for parents =={">"} CLS ok
+          but elements after it have wrong layout
         </Alert>
       </h2>
+      <div style={{position:'absolute'}}>
       <div
         style={{
           width: `${PARENT_WITH_PX}px`,
@@ -34,11 +35,11 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
         <Image
           src={`/${LION_IMG}`}
           alt="some title"
-          // width={LION_IMG_WIDTH_PX}
-          // height={LION_IMG_HEIGHT_PX}
           fill={true}
         />
       </div>
+      </div>
+
 
       <p>{LOREM_100_STRING}</p>
     </>
