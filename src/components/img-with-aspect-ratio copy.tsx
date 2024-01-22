@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const ImgWithAspectRatio: FC<IProps> = ({ info }) => {
-  const { parentWidthPx, imgWidthPx, imgHeightPx, imgSrc } = info;
+  const { parentWidthPx, aspectRatio, imgSrc } = info;
 
   return (
     <div>
@@ -14,11 +14,11 @@ const ImgWithAspectRatio: FC<IProps> = ({ info }) => {
         style={{
           width: `${parentWidthPx}px`,
           position: "relative",
-          aspectRatio: `${imgWidthPx} / ${imgHeightPx}`,
+          aspectRatio: `${aspectRatio} / 1`,
         }}
       >
         <img
-          style={{ width: "100%" /*, objectFit: "contain"*/ }}
+          style={{ width: "100%"  }}
           src={`/${imgSrc}`}
           alt="some title"
         />

@@ -1,6 +1,5 @@
 export default interface IPicWithAspectRatio {
   parentWidthPx: number;
-  imgWidthPx: number;
-  imgHeightPx: number;
+  aspectRatio: number; // width / height
   imgSrc: string;
 }
