@@ -13,7 +13,7 @@ const KeepRealAspectRatioHtmlImg = () => {
         <Alert severity="success">
           Use html img with width : 100% , and relative+aspect-ratio for parent
           ==
-          {">"} <strong>CLS</strong> ok : 0 sec
+          {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success"><strong>LCP</strong> is ok ~ 2 sec but not as good as for next.js Image</Alert>
       </h2>

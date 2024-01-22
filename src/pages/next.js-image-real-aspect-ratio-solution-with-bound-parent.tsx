@@ -12,7 +12,7 @@ const keepPseudoAspectRatioNextImage = () => {
       <h2>
         <Alert severity="success">
           Use next.js Image with fill , and relative+aspect-ratio for parent ==
-          {">"} <strong>CLS</strong> ok : 0 sec
+          {">"} <strong>CLS</strong> ok : 0 
         </Alert>
         <Alert severity="success">
           <strong>LCP</strong> is ok ~ 1 sec

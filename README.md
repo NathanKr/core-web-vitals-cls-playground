@@ -98,4 +98,7 @@ This is the basic idea
 
 
 <h2>Open issues</h2>
-Altough this solution handle a use case of image width < parent width the end result is that the image occupy the whole parent width and height and this might cause some distortion altough it is not evedance with infoSmall. I wonder if for this use case the image will keep its width thus no distortion. The solution used in <a href='https://web.dev/learn/design/responsive-images'>web.dev</a> is to used object-fit but it is not working here for some reason
+<ul>
+<li>Altough this solution handle a use case of image width < parent width the end result is that the image occupy the whole parent width and height and this might cause some distortion altough it is not evedance with infoSmall. I wonder if for this use case the image will keep its width thus no distortion. The solution used in <a href='https://web.dev/learn/design/responsive-images'>web.dev</a> is to used object-fit but it is not working here for some reason</li>
+<li>for both html img and next.js Image i dont get a 100 score for page speed insight 'best practices' due to 'Serves images with low resolution' currently i dont understand why - may be <a href='https://web.dev/articles/serve-responsive-images?utm_source=lighthouse&utm_medium=lr'>serve-responsive-images</a> will help</li>
+</ul>
