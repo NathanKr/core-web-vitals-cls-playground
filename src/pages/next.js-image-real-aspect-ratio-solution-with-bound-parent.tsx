@@ -15,7 +15,7 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
       <h1>{ETab.keepAspectRatioNextImage}</h1>
       <h2>
         <Alert severity="success">
-          Use next.js Image with fill , and relative+aspect-ration for parent ==
+          Use next.js Image with fill , and relative+aspect-ratio for parent ==
           {">"} CLS ok
         </Alert>
       </h2>

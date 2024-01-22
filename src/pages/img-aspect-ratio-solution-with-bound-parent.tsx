@@ -13,10 +13,10 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
     <>
       <h1>{ETab.keepRealAspectRatioHtmlImg}</h1>
       <h2>
-        {/* <Alert severity="success">
-          Use next.js Image with fill , and relative+aspect-ration for parent ==
+        <Alert severity="success">
+          Use html img with width : 100% , and relative+aspect-ratio for parent ==
           {">"} CLS ok
-        </Alert> */}
+        </Alert>
       </h2>
       <div
         style={{
