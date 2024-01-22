@@ -12,8 +12,7 @@ import { Alert } from "@mui/material";
 const KeepAspectRatioSolutionWithBoundParent = () => {
   const aspectRatio = LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX;
   const paddingTopPercentage = `${(100 * 1) / aspectRatio}%`;
-  console.log(paddingTopPercentage);
-  
+ 
 
   return (
     <>
