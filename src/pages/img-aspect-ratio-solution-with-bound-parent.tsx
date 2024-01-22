@@ -19,7 +19,7 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
           {">"} CLS ok
         </Alert>
         <Alert severity="error">
-          LCP is not ok
+          LCP is not ok ~ 4.5 sec
         </Alert>
       </h2>
       <div
