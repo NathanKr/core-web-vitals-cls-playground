@@ -4,7 +4,7 @@ import { LOREM_100_STRING } from "@/utils/constants";
 import { infoBig, infoSmall } from "@/utils/utils";
 import { Alert } from "@mui/material";
 
-const KeepAspectRatioSolutionWithBoundParent = () => {
+const KeepRealAspectRatioHtmlImg = () => {
   
   return (
     <>
@@ -13,9 +13,9 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
         <Alert severity="success">
           Use html img with width : 100% , and relative+aspect-ratio for parent
           ==
-          {">"} CLS ok
+          {">"} <strong>CLS</strong> ok : 0 sec
         </Alert>
-        <Alert severity="success">LCP is ok ~ 2 sec but not as good as for next.js Image</Alert>
+        <Alert severity="success"><strong>LCP</strong> is ok ~ 2 sec but not as good as for next.js Image</Alert>
       </h2>
       <h3>pic width {'<'} than parent width</h3>
       <ImgWithAspectRatio info={infoSmall}/>
@@ -26,4 +26,4 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
   );
 };
 
-export default KeepAspectRatioSolutionWithBoundParent;
+export default KeepRealAspectRatioHtmlImg;

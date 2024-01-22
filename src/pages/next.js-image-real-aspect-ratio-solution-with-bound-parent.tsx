@@ -5,24 +5,26 @@ import { infoBig, infoSmall } from "@/utils/utils";
 
 import { Alert } from "@mui/material";
 
-const KeepAspectRatioSolutionWithBoundParent = () => {
+const keepPseudoAspectRatioNextImage = () => {
   return (
     <>
-      <h1>{ETab.keepAspectRatioNextImage}</h1>
+      <h1>{ETab.keepPseudoAspectRatioNextImage}</h1>
       <h2>
         <Alert severity="success">
           Use next.js Image with fill , and relative+aspect-ratio for parent ==
-          {">"} CLS ok ~ 2 sec
+          {">"} <strong>CLS</strong> ok : 0 sec
         </Alert>
-        <Alert severity="success">LCP is ok ~ 1 sec</Alert>
+        <Alert severity="success">
+          <strong>LCP</strong> is ok ~ 1 sec
+        </Alert>
       </h2>
-      <h3>pic width {'<'} parent width</h3>
-      <NextImageWithAspectRatio info={infoSmall}/>
-      <h3>pic width {'>'} parent width</h3>
-      <NextImageWithAspectRatio info={infoBig}/>
+      <h3>pic width {"<"} parent width</h3>
+      <NextImageWithAspectRatio info={infoSmall} />
+      <h3>pic width {">"} parent width</h3>
+      <NextImageWithAspectRatio info={infoBig} />
       <p>{LOREM_100_STRING}</p>
     </>
   );
 };
 
-export default KeepAspectRatioSolutionWithBoundParent;
+export default keepPseudoAspectRatioNextImage;

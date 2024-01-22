@@ -9,13 +9,13 @@ import {
 } from "@/utils/constants";
 import { Alert } from "@mui/material";
 
-const KeepAspectRatioSolutionWithBoundParent = () => {
+const KeepPseudoAspectRatioNextImage = () => {
   const aspectRatio = LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX;
   const paddingTopPercentage = `${(100 * 1) / aspectRatio}%`;
 
   return (
     <>
-      <h1>{ETab.keepAspectRatioNextImage}</h1>
+      <h1>{ETab.keepPseudoAspectRatioNextImage}</h1>
       <h2>
         <Alert severity="error">
           Use next.js Image with fill , and relative\absolute for parents ==
@@ -39,4 +39,4 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
   );
 };
 
-export default KeepAspectRatioSolutionWithBoundParent;
+export default KeepPseudoAspectRatioNextImage;
