@@ -14,8 +14,12 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
       <h1>{ETab.keepRealAspectRatioHtmlImg}</h1>
       <h2>
         <Alert severity="success">
-          Use html img with width : 100% , and relative+aspect-ratio for parent ==
+          Use html img with width : 100% , and relative+aspect-ratio for parent
+          ==
           {">"} CLS ok
+        </Alert>
+        <Alert severity="error">
+          LCP is not ok
         </Alert>
       </h2>
       <div

@@ -18,6 +18,9 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
           Use next.js Image with fill , and relative+aspect-ratio for parent ==
           {">"} CLS ok
         </Alert>
+        <Alert severity="success">
+          LCP is ok
+        </Alert>
       </h2>
       <div
         style={{
