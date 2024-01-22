@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const NextImageWithAspectRatio: FC<IProps> = ({ info }) => {
-  const { parentWidthPx, aspectRatio, imgSrc } = info;
+  const { parentWidthPx, aspectRatio, imgSrc , title } = info;
 
   return (
     <>
@@ -19,7 +19,7 @@ const NextImageWithAspectRatio: FC<IProps> = ({ info }) => {
           aspectRatio: `${aspectRatio} / 1`,
         }}
       >
-        <Image src={`/${imgSrc}`} alt="some title" fill={true} />
+        <Image src={`/${imgSrc}`} alt={title} fill={true} />
       </div>
     </>
   );

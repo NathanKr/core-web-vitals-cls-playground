@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const ImgWithAspectRatio: FC<IProps> = ({ info }) => {
-  const { parentWidthPx, aspectRatio, imgSrc } = info;
+  const { parentWidthPx, aspectRatio, imgSrc ,title} = info;
 
   return (
     <div>
@@ -20,7 +20,7 @@ const ImgWithAspectRatio: FC<IProps> = ({ info }) => {
         <img
           style={{ width: "100%"  }}
           src={`/${imgSrc}`}
-          alt="some title"
+          alt={title}
         />
       </div>
     </div>

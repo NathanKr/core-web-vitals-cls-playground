@@ -16,15 +16,35 @@ If the image is not bound in width \ height by its parent then this is non issue
 
 <h2>Solution</h2>
 
+Use img element
+
 ```tsx
 <div
   style={{
-    width: `${PARENT_WITH_PX}px`,
+    width: `${parentWidthPx}px`,
     position: "relative",
-    aspectRatio: `${LION_IMG_WIDTH_PX} / ${LION_IMG_HEIGHT_PX}`,
+    aspectRatio: `${aspectRatio} / 1`,
   }}
 >
-  <img style={{ width: "100%" }} src={`/${LION_IMG}`} alt="some title" />
+  <img
+    style={{ width: "100%"  }}
+    src={`/${imgSrc}`}
+    alt={title}
+  />
+</div>
+```
+
+Use next.js Image
+
+```tsx
+<div
+  style={{
+    width: `${parentWidthPx}px`,
+    position: "relative",
+    aspectRatio: `${aspectRatio} / 1`,
+  }}
+>
+  <Image src={`/${imgSrc}`} alt={title} fill={true} />
 </div>
 ```
 
@@ -33,8 +53,5 @@ If the image is not bound in width \ height by its parent then this is non issue
 <li>using the css aspect-ratio property is realy helpfull when you want to keep the image aspect ratio and eliminate layout shift problem. Both will improve the UI experience </li>
 <li>You need to apply the aspect-ratio on the image bounding element from one side and instruct the image to fill its parent width on the other side. use 100% for html img and fill true for next.js Image component</li>
 <li>using the above technique allow the browser to know the bounding rect before rendering and this elimeinate layput shift ==> CLS is zero in tems of core web vitals</li>
-<li>altough using aspect-ratio and img we made CLS=0 , this is not true for LCP. The LCP is much smaller (more than half) when you replace html img with next.js Image. You may check the reasons by looking on the errors in page speed insight . one possible reason is the fact that next.js serve images in 'Image formats like WebP and AVIF often provide better compression than PNG or JPEG'
-<ul>
-</ul>
-</li>
+<li>altough using aspect-ratio and img we made CLS=0 , this is not true for LCP. The LCP is smaller when you replace html img with next.js Image. You may check the reasons by looking on the errors in page speed insight . one possible reason is the fact that next.js serve images in 'Image formats like WebP and AVIF often provide better compression than PNG or JPEG'. In this respect Image component of next.js is better than img html element</li>
 </ul>

@@ -13,9 +13,11 @@ export const infoBig: IPicWithAspectRatio = {
   parentWidthPx: PARENT_WITH_PX,
   aspectRatio: LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX,
   imgSrc: LION_IMG,
+  title: "big picture"
 };
 export const infoSmall: IPicWithAspectRatio = {
   parentWidthPx: PARENT_WITH_PX,
   aspectRatio: SMALL_LION_IMG_WIDTH_PX / SMALL_LION_IMG_HEIGHT_PX,
   imgSrc: SMALL_LION_IMG,
+  title: "small picture"
 };

@@ -15,7 +15,7 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
           ==
           {">"} CLS ok
         </Alert>
-        <Alert severity="error">LCP is not ok ~ 4.5 sec</Alert>
+        <Alert severity="success">LCP is ok ~ 2 sec but not as good as for next.js Image</Alert>
       </h2>
       <h3>pic width {'<'} than parent width</h3>
       <ImgWithAspectRatio info={infoSmall}/>
