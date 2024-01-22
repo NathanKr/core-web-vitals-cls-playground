@@ -4,6 +4,7 @@ enum ETab {
   uiProblemWithBoundParent = "ui-problem-with-bound-parent",
   keepAspectRatioNextImage = "next.js-image-pseudo-aspect-ratio-solution-with-bound-parent",
   keepRealAspectRatioNextImage = "next.js-image-real-aspect-ratio-solution-with-bound-parent",
+  keepRealAspectRatioHtmlImg = 'img-aspect-ratio-solution-with-bound-parent'
 }
 
 export default ETab;
