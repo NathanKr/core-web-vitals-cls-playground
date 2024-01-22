@@ -1,12 +1,8 @@
-import ETab from "@/types/tab";
-import Image from "next/image";
-import {
-  LION_IMG,
-  LION_IMG_HEIGHT_PX,
-  LION_IMG_WIDTH_PX,
-  LOREM_100_STRING,
-  PARENT_WITH_PX,
-} from "@/utils/constants";
+import NextImageWithAspectRatio from "@/components/next-image-with-aspect-ratio";
+import ETab from "@/types/e-tab";
+import { LOREM_100_STRING } from "@/utils/constants";
+import { infoBig, infoSmall } from "@/utils/utils";
+
 import { Alert } from "@mui/material";
 
 const KeepAspectRatioSolutionWithBoundParent = () => {
@@ -18,19 +14,12 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
           Use next.js Image with fill , and relative+aspect-ratio for parent ==
           {">"} CLS ok ~ 2 sec
         </Alert>
-        <Alert severity="success">
-          LCP is ok
-        </Alert>
+        <Alert severity="success">LCP is ok</Alert>
       </h2>
-      <div
-        style={{
-          width: `${PARENT_WITH_PX}px`,
-          position: "relative",
-          aspectRatio: `${LION_IMG_WIDTH_PX} / ${LION_IMG_HEIGHT_PX}`,
-        }}
-      >
-        <Image src={`/${LION_IMG}`} alt="some title" fill={true} />
-      </div>
+      <h3>pic width {'<'} parent width</h3>
+      <NextImageWithAspectRatio info={infoSmall}/>
+      <h3>pic width {'>'} parent width</h3>
+      <NextImageWithAspectRatio info={infoBig}/>
       <p>{LOREM_100_STRING}</p>
     </>
   );

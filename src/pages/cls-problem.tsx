@@ -1,4 +1,4 @@
-import ETab from "@/types/tab";
+import ETab from "@/types/e-tab";
 import { LION_IMG, LOREM_100_STRING } from "@/utils/constants";
 import Alert from "@mui/material/Alert";
 

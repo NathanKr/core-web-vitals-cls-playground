@@ -1,14 +1,11 @@
-import ETab from "@/types/tab";
-import {
-  LION_IMG,
-  LION_IMG_HEIGHT_PX,
-  LION_IMG_WIDTH_PX,
-  LOREM_100_STRING,
-  PARENT_WITH_PX,
-} from "@/utils/constants";
+import ImgWithAspectRatio from "@/components/next-image-with-aspect-ratio";
+import ETab from "@/types/e-tab";
+import { LOREM_100_STRING } from "@/utils/constants";
+import { infoBig, infoSmall } from "@/utils/utils";
 import { Alert } from "@mui/material";
 
 const KeepAspectRatioSolutionWithBoundParent = () => {
+  
   return (
     <>
       <h1>{ETab.keepRealAspectRatioHtmlImg}</h1>
@@ -18,19 +15,12 @@ const KeepAspectRatioSolutionWithBoundParent = () => {
           ==
           {">"} CLS ok
         </Alert>
-        <Alert severity="error">
-          LCP is not ok ~ 4.5 sec
-        </Alert>
+        <Alert severity="error">LCP is not ok ~ 4.5 sec</Alert>
       </h2>
-      <div
-        style={{
-          width: `${PARENT_WITH_PX}px`,
-          position: "relative",
-          aspectRatio: `${LION_IMG_WIDTH_PX} / ${LION_IMG_HEIGHT_PX}`,
-        }}
-      >
-        <img style={{ width: "100%" }} src={`/${LION_IMG}`} alt="some title" />
-      </div>
+      <h3>pic width {'<'} than parent width</h3>
+      <ImgWithAspectRatio info={infoSmall}/>
+      <h3>pic width {'>'} than parent width</h3>
+      <ImgWithAspectRatio info={infoBig}/>
       <p>{LOREM_100_STRING}</p>
     </>
   );

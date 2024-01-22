@@ -1,4 +1,4 @@
-import ETab from "@/types/tab";
+import ETab from "@/types/e-tab";
 import Image from "next/image";
 import {
   LION_IMG,

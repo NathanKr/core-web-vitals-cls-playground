@@ -1,7 +1,11 @@
 export const LION_IMG = "lion-3576045_1280.jpg";
-export const PARENT_WITH_PX = 500;
+export const SMALL_LION_IMG = 'small-lion.png'
+export const PARENT_WITH_PX = 400;
 export const LION_IMG_WIDTH_PX =  1280;
 export const LION_IMG_HEIGHT_PX =  810;
+export const SMALL_LION_IMG_WIDTH_PX =  200;
+export const SMALL_LION_IMG_HEIGHT_PX =  134;
+
 export const LOREM_100_STRING = ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
 repudiandae consectetur facilis illum, quam sed reiciendis neque quasi
 fugiat debitis, rerum ea? Eum voluptas sit error vitae labore deleniti

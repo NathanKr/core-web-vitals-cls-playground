@@ -1,4 +1,4 @@
-import ETab from "@/types/tab";
+import ETab from "@/types/e-tab";
 import Link from "next/link";
 import styles from "@/styles/top.module.css";
 

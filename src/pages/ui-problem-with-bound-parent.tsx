@@ -1,4 +1,4 @@
-import ETab from "@/types/tab";
+import ETab from "@/types/e-tab";
 import {
   LION_IMG,
   LION_IMG_HEIGHT_PX,

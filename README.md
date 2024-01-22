@@ -7,6 +7,7 @@ So here are few questions that answers can shed light on this metric
 <li>how to create a page with cls problem using image</li>
 <li>how to solve it by providing width and height ==> brut force might not always be enough</li>
 <li>is it possible to solve this by providing the image aspect ratio instead of width and height</li>
+<li>how to solve the use case of img width smaller than parent without picture distortion</li>
 <li>does Image component of next.js make it easy to solve this problem</li>
 </ol>
 
