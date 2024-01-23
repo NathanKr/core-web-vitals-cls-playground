@@ -20,7 +20,7 @@ const AspectRatioHtmlImgFixedParent = () => {
           {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success">
-          <strong>LCP</strong> is ok ~ 2 sec
+          <strong>LCP</strong> is ok ~ 2 sec on average
         </Alert>
       </h2>
       <HeadingSmall />

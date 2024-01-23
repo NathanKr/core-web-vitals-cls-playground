@@ -96,8 +96,21 @@ This is the basic idea
 <p>All the above relate to fixed parent width e.g 800px but this is not resaponsive in terms of the parent width</p>
 <p>to allow the parent width to be responsive you need to use max-width and providing img width is meaning less so small has the parent size not like for fixed parent width</p>
 
+<h2>Points of interest</h2>
+<ul>
+<li>LCP is good for all use cases ~ 2sec beside img variable parent width ~ 4sec.
+<ul>
+<li>next.js-image-aspect-ratio-fixed-parent-width : the first image is small and keep its width so image is small --> low LCP</li>
+<li>img-aspect-ratio-fixed-parent-width : same as next.js-image-aspect-ratio-fixed-parent-width</li>
+<li>next.js-image-aspect-ratio-variable-parent-width : the first image is small but stertch to the parent width so image dowloaded is big. But WebP format is used by next.js Image --> low LCP</li>
+<li>img-aspect-ratio-variable-parent-width : the first image is small but stertch to the parent width so image dowloaded is big  --> high LCP</li>
+</ul>
+<img src='/figs/average-lcp.png'/>
+</li>
+</ul>
+
+
 <h2>Open issues</h2>
 <ul>
-<li>for fix parent it is working nicely -->how to handle variable parent width ? </li>
 <li>for both html img and next.js Image i dont get a 100 score for page speed insight 'best practices' due to 'Serves images with low resolution' currently i dont understand why - may be <a href='https://web.dev/articles/serve-responsive-images?utm_source=lighthouse&utm_medium=lr'>serve-responsive-images</a> will help</li>
 </ul>

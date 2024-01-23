@@ -20,7 +20,7 @@ const AspectRatioHtmlImgVariableParent = () => {
           {">"} <strong>CLS</strong> ok : ~0
         </Alert>
         <Alert severity="error">
-          <strong>LCP</strong> not ok ~ 4-5 sec
+          <strong>LCP</strong> not ok ~ 4 sec on average
         </Alert>
       </h2>
 

@@ -16,10 +16,10 @@ const AspectRatioNextImageVariableParent = () => {
         <Alert severity="success">
           Use next.js Image with fill , and relative+aspect-ratio+max-width:widthPx
           for parent ==
-          {">"} <strong>CLS</strong> ok : ....
+          {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success">
-          <strong>LCP</strong> is ok ~ ... sec
+          <strong>LCP</strong> is ok ~ 2 sec on average
         </Alert>
       </h2>
       <HeadingSmallVariable />
