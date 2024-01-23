@@ -33,7 +33,7 @@ The pages with final solution for CLS are the last two
 
 <h3>Production</h3>
 
-push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check for CLS --> should be 0 and LCP which is ~ 1 sec for the next.js Image solution and ~ 2 sec for the img html element
+push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check for CLS --> should be 0 and LCP which is ~ 2 sec for the next.js Image solution and img html element
 
 <h2>Leading questions</h2>
 So here are few questions that answers can shed light on this metric
@@ -53,38 +53,33 @@ This is the basic idea
 <ul>
 <li>Parent side : By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
 <li>Image side : we took care of the width and height via the parent and now the image simply need to fill the parent using width 100% for html img element or fill for next.js Image component</li>
+<li>fill the parent react is ok for image width > parent width because no UI distortion in this case (infoBig) . However filling the parent in case the image width < parent width might cause distortion. To eliminate it you can bound the parent width to the image width and this is done by providing imgWidthPx in IImageWithAspectRatio  </li>
 </ul>
 
 <h3>html img element</h3>
 
 ```tsx
-<div
-  style={{
-    width: `${parentWidthPx}px`,
-    position: "relative",
-    aspectRatio: `${aspectRatio} / 1`,
-  }}
->
-  <img
-    style={{ width: "100%"  }}
-    src={`/${imgSrc}`}
-    alt={title}
-  />
-</div>
+  const { imgSrc, title } = info;
+  const style = getParentStyle(info);
+
+  return (
+    <div style={style}>
+      <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
+    </div>
+  );
 ```
 
 <h3>next.js Image component</h3>
 
 ```tsx
-<div
-  style={{
-    width: `${parentWidthPx}px`,
-    position: "relative",
-    aspectRatio: `${aspectRatio} / 1`,
-  }}
->
-  <Image src={`/${imgSrc}`} alt={title} fill={true} />
-</div>
+  const { imgSrc, title } = info;
+  const style = getParentStyle(info);
+
+  return (
+    <div style={style}>
+      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+    </div>
+  );
 ```
 
 <h2>Conclusions</h2>

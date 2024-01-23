@@ -8,6 +8,7 @@ import {
   SMALL_LION_IMG_HEIGHT_PX,
   SMALL_LION_IMG_WIDTH_PX,
 } from "./constants";
+import { CSSProperties } from "react";
 
 export const infoBig: IImageWithAspectRatio = {
   parentWidthPx: PARENT_WITH_PX,
@@ -23,3 +24,19 @@ export const infoSmall: IImageWithAspectRatio = {
   title: "small picture",
   imgWidthPx: SMALL_LION_IMG_WIDTH_PX,
 };
+
+export function getParentStyle(info: IImageWithAspectRatio) : CSSProperties{
+  const { parentWidthPx, aspectRatio, imgWidthPx } = info;
+
+  const style: CSSProperties = {
+    width: `${parentWidthPx}px`,
+    position: "relative",
+    aspectRatio: `${aspectRatio} / 1`,
+  };
+
+  if(imgWidthPx){
+    style.maxWidth = `${imgWidthPx}px`
+  }
+
+  return style;
+}

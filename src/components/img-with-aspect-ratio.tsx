@@ -1,4 +1,5 @@
 import IImageWithAspectRatio from "@/types/i-image-with-aspect-ratio";
+import { getParentStyle } from "@/utils/utils";
 import { FC } from "react";
 
 interface IProps {
@@ -6,20 +7,12 @@ interface IProps {
 }
 
 const ImgWithAspectRatio: FC<IProps> = ({ info }) => {
-  const { parentWidthPx, aspectRatio, imgSrc, title, imgWidthPx } = info;
+  const { imgSrc, title } = info;
+  const style = getParentStyle(info);
 
   return (
-    <div>
-      <div
-        style={{
-          maxWidth: `${imgWidthPx}px`,
-          width: `${parentWidthPx}px`,
-          position: "relative",
-          aspectRatio: `${aspectRatio} / 1`,
-        }}
-      >
-        <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
-      </div>
+    <div style={style}>
+      <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
     </div>
   );
 };

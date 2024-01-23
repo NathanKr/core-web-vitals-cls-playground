@@ -17,8 +17,7 @@ const KeepRealAspectRatioHtmlImg = () => {
           {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success">
-          <strong>LCP</strong> is ok ~ 2 sec but not as good as for next.js
-          Image
+          <strong>LCP</strong> is ok ~ 2 sec
         </Alert>
       </h2>
       <HeadingSmall />

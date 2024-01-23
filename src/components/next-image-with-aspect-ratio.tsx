@@ -1,28 +1,21 @@
 import IImageWithAspectRatio from "@/types/i-image-with-aspect-ratio";
+import { getParentStyle } from "@/utils/utils";
 import Image from "next/image";
 
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 
 interface IProps {
   info: IImageWithAspectRatio;
 }
 
 const NextImageWithAspectRatio: FC<IProps> = ({ info }) => {
-  const { parentWidthPx, aspectRatio, imgSrc, title, imgWidthPx } = info;
+  const { imgSrc, title } = info;
+  const style = getParentStyle(info);
 
   return (
-    <>
-      <div
-        style={{
-          maxWidth: `${imgWidthPx}px`,
-          width: `${parentWidthPx}px`,
-          position: "relative",
-          aspectRatio: `${aspectRatio} / 1`,
-        }}
-      >
-        <Image src={`/${imgSrc}`} alt={title} fill={true} />
-      </div>
-    </>
+    <div style={style}>
+      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+    </div>
   );
 };
 
