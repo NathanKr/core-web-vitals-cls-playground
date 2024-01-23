@@ -9,10 +9,10 @@ import {
 } from "@/utils/utils";
 import { Alert } from "@mui/material";
 
-const KeepRealAspectRatioHtmlImg = () => {
+const AspectRatioHtmlImgFixedParent = () => {
   return (
     <>
-      <h1>{ETab.keepRealAspectRatioHtmlImg}</h1>
+      <h1>{ETab.aspectRatioHtmlImgFixedParent}</h1>
       <h2>
         <Alert severity="success">
           Use html img with width : 100% , and relative+aspect-ratio for parent
@@ -32,4 +32,4 @@ const KeepRealAspectRatioHtmlImg = () => {
   );
 };
 
-export default KeepRealAspectRatioHtmlImg;
+export default AspectRatioHtmlImgFixedParent;

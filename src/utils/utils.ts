@@ -48,7 +48,21 @@ export const infoSmallFixedParentWidth: IImageWithAspectRatioFixedParentWidth =
     ...infoSmallBase,
   };
 
-export function getParentStyle(
+export function getVariableParentStyle(
+  info: IImageWithAspectRatioVariableParentWidth
+): CSSProperties {
+  const { parentMaxWidthPx, aspectRatio } = info;
+
+  const parentStyle: CSSProperties = {
+    maxWidth: `${parentMaxWidthPx}px`,
+    position: "relative",
+    aspectRatio: `${aspectRatio} / 1`,
+  };
+
+  return parentStyle;
+}
+
+export function getFixedParentStyle(
   info: IImageWithAspectRatioFixedParentWidth
 ): CSSProperties {
   const { parentWidthPx, aspectRatio, imgWidthPx } = info;

@@ -9,13 +9,13 @@ import {
 } from "@/utils/constants";
 import { Alert } from "@mui/material";
 
-const KeepPseudoAspectRatioNextImage = () => {
+const AspectRatioNextImageVariableParent = () => {
   const aspectRatio = BIG_LION_IMG_WIDTH_PX / BIG_LION_IMG_HEIGHT_PX;
   const paddingTopPercentage = `${(100 * 1) / aspectRatio}%`;
 
   return (
     <>
-      <h1>{ETab.keepPseudoAspectRatioNextImage}</h1>
+      <h1>{ETab.aspectRatioNextImageVariableParent}</h1>
       <h2>
         <Alert severity="error">
           Use next.js Image with fill , and relative\absolute for parents ==
@@ -39,4 +39,4 @@ const KeepPseudoAspectRatioNextImage = () => {
   );
 };
 
-export default KeepPseudoAspectRatioNextImage;
+export default AspectRatioNextImageVariableParent;

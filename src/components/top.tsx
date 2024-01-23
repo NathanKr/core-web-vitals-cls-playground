@@ -9,7 +9,6 @@ const Top = () => {
       <Link key={i} href={`/${tab}`}>
         {tab}
       </Link>
-      <br />
     </>
   ));
 

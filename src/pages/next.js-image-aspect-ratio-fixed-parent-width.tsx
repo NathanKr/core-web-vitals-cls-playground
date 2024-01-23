@@ -1,5 +1,5 @@
 import HeadingBigFixed from "@/components/heading-big-fixed";
-import HeadingSmall from "@/components/heading-small-fixed";
+import HeadingSmallFixed from "@/components/heading-small-fixed";
 import NextImageWithAspectRatioFixedParentWidth from "@/components/next-image-with-aspect-ratio-fixed-parent-width";
 import ETab from "@/types/e-tab";
 import { LOREM_100_STRING } from "@/utils/constants";
@@ -10,20 +10,21 @@ import {
 
 import { Alert } from "@mui/material";
 
-const keepPseudoAspectRatioNextImage = () => {
+const AspectRatioNextImageFixedParent = () => {
   return (
     <>
-      <h1>{ETab.keepPseudoAspectRatioNextImage}</h1>
+      <h1>{ETab.aspectRatioNextImageFixedParent}</h1>
       <h2>
         <Alert severity="success">
-          Use next.js Image with fill , and relative+aspect-ratio+width:widthPx for parent ==
+          Use next.js Image with fill , and relative+aspect-ratio+width:widthPx
+          for parent ==
           {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success">
           <strong>LCP</strong> is ok ~ 2 sec
         </Alert>
       </h2>
-      <HeadingSmall />
+      <HeadingSmallFixed />
       <NextImageWithAspectRatioFixedParentWidth
         info={infoSmallFixedParentWidth}
       />
@@ -36,4 +37,4 @@ const keepPseudoAspectRatioNextImage = () => {
   );
 };
 
-export default keepPseudoAspectRatioNextImage;
+export default AspectRatioNextImageFixedParent;

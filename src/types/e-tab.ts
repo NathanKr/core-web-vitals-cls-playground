@@ -1,11 +1,12 @@
 enum ETab {
   proplem = "cls-problem",
-  simpleSolution = "simple-solution-no-parent-bound",
-  uiProblemWithBoundParent = "ui-problem-with-bound-parent",
-  keepPseudoAspectRatioNextImage = "next.js-image-pseudo-aspect-ratio-solution-with-bound-parent",
-  keepRealAspectRatioNextImage = "next.js-image-real-aspect-ratio-solution-with-bound-parent",
-  keepRealAspectRatioHtmlImg = "img-aspect-ratio-solution-with-bound-parent",
-  imgAspectRatioVariableParentWidth = 'img-aspect-ratio-variable-parent-width'
+  simpleSolution = "simple-no-parent-bound",
+  uiProblemWithBoundParent = "ui-problem-fixed-parent-width",
+  pseudoAspectRatioNextImageFixedParent = "next.js-image-pseudo-aspect-ratio-fixed-parent-width",
+  aspectRatioNextImageFixedParent = "next.js-image-aspect-ratio-fixed-parent-width",
+  aspectRatioNextImageVariableParent = "next.js-image-aspect-ratio-variable-parent-width",
+  aspectRatioHtmlImgFixedParent = "img-aspect-ratio-fixed-parent-width",
+  aspectRatioHtmlImgVariableParent = "img-aspect-ratio-variable-parent-width",
 }
 
 export default ETab;
