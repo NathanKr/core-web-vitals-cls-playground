@@ -1,4 +1,4 @@
-import IPicWithAspectRatio from "@/types/i-pic-with-aspect-ratio";
+import IImageWithAspectRatio from "@/types/i-image-with-aspect-ratio";
 import {
   LION_IMG,
   LION_IMG_HEIGHT_PX,
@@ -9,15 +9,17 @@ import {
   SMALL_LION_IMG_WIDTH_PX,
 } from "./constants";
 
-export const infoBig: IPicWithAspectRatio = {
+export const infoBig: IImageWithAspectRatio = {
   parentWidthPx: PARENT_WITH_PX,
   aspectRatio: LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX,
   imgSrc: LION_IMG,
-  title: "big picture"
+  title: "big picture",
+  imgWidthPx: LION_IMG_WIDTH_PX,
 };
-export const infoSmall: IPicWithAspectRatio = {
+export const infoSmall: IImageWithAspectRatio = {
   parentWidthPx: PARENT_WITH_PX,
   aspectRatio: SMALL_LION_IMG_WIDTH_PX / SMALL_LION_IMG_HEIGHT_PX,
   imgSrc: SMALL_LION_IMG,
-  title: "small picture"
+  title: "small picture",
+  imgWidthPx: SMALL_LION_IMG_WIDTH_PX,
 };

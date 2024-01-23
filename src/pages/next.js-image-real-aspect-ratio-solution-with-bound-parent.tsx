@@ -1,3 +1,5 @@
+import HeadingBig from "@/components/heading-big";
+import HeadingSmall from "@/components/heading-small";
 import NextImageWithAspectRatio from "@/components/next-image-with-aspect-ratio";
 import ETab from "@/types/e-tab";
 import { LOREM_100_STRING } from "@/utils/constants";
@@ -18,9 +20,9 @@ const keepPseudoAspectRatioNextImage = () => {
           <strong>LCP</strong> is ok ~ 1 sec
         </Alert>
       </h2>
-      <h3>pic width {"<"} parent width</h3>
+      <HeadingSmall />
       <NextImageWithAspectRatio info={infoSmall} />
-      <h3>pic width {">"} parent width</h3>
+      <HeadingBig/>
       <NextImageWithAspectRatio info={infoBig} />
       <p>{LOREM_100_STRING}</p>
     </>
