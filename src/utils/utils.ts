@@ -1,31 +1,56 @@
-import IImageWithAspectRatio from "@/types/i-image-with-aspect-ratio";
+import IImageWithAspectRatioFixedParentWidth from "@/types/i-image-with-aspect-ratio-fixed-parent-width";
 import {
-  LION_IMG,
-  LION_IMG_HEIGHT_PX,
-  LION_IMG_WIDTH_PX,
-  PARENT_WITH_PX,
+  BIG_LION_IMG,
+  BIG_LION_IMG_HEIGHT_PX,
+  BIG_LION_IMG_WIDTH_PX,
+  PARENT_WIDTH_PX,
   SMALL_LION_IMG,
   SMALL_LION_IMG_HEIGHT_PX,
   SMALL_LION_IMG_WIDTH_PX,
 } from "./constants";
 import { CSSProperties } from "react";
+import IBaseImageWithAspectRatio from "@/types/i-base-image-with-aspect-ratio";
+import IImageWithAspectRatioVariableParentWidth from "@/types/i-image-with-aspect-ratio-variable-parent-width";
 
-export const infoBig: IImageWithAspectRatio = {
-  parentWidthPx: PARENT_WITH_PX,
-  aspectRatio: LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX,
-  imgSrc: LION_IMG,
+const infoBigBase: IBaseImageWithAspectRatio = {
+  aspectRatio: BIG_LION_IMG_WIDTH_PX / BIG_LION_IMG_HEIGHT_PX,
+  imgSrc: BIG_LION_IMG,
   title: "big picture",
-  imgWidthPx: LION_IMG_WIDTH_PX,
 };
-export const infoSmall: IImageWithAspectRatio = {
-  parentWidthPx: PARENT_WITH_PX,
+export const infoBigFixedParentWidth: IImageWithAspectRatioFixedParentWidth = {
+  parentWidthPx: PARENT_WIDTH_PX,
+  imgWidthPx: BIG_LION_IMG_WIDTH_PX,
+  ...infoBigBase,
+};
+
+export const infoBigVariableParentWidth: IImageWithAspectRatioVariableParentWidth =
+  {
+    ...infoBigBase,
+    parentMaxWidthPx: PARENT_WIDTH_PX,
+  };
+
+const infoSmallBase: IBaseImageWithAspectRatio = {
   aspectRatio: SMALL_LION_IMG_WIDTH_PX / SMALL_LION_IMG_HEIGHT_PX,
   imgSrc: SMALL_LION_IMG,
   title: "small picture",
-  imgWidthPx: SMALL_LION_IMG_WIDTH_PX,
 };
 
-export function getParentStyle(info: IImageWithAspectRatio) : CSSProperties{
+export const infoSmallVariableParentWidth: IImageWithAspectRatioVariableParentWidth =
+  {
+    ...infoSmallBase,
+    parentMaxWidthPx: PARENT_WIDTH_PX,
+  };
+
+export const infoSmallFixedParentWidth: IImageWithAspectRatioFixedParentWidth =
+  {
+    parentWidthPx: PARENT_WIDTH_PX,
+    imgWidthPx: SMALL_LION_IMG_WIDTH_PX,
+    ...infoSmallBase,
+  };
+
+export function getParentStyle(
+  info: IImageWithAspectRatioFixedParentWidth
+): CSSProperties {
   const { parentWidthPx, aspectRatio, imgWidthPx } = info;
 
   const parentStyle: CSSProperties = {
@@ -34,8 +59,8 @@ export function getParentStyle(info: IImageWithAspectRatio) : CSSProperties{
     aspectRatio: `${aspectRatio} / 1`,
   };
 
-  if(imgWidthPx){
-    parentStyle.maxWidth = `${imgWidthPx}px`
+  if (imgWidthPx) {
+    parentStyle.maxWidth = `${imgWidthPx}px`;
   }
 
   return parentStyle;

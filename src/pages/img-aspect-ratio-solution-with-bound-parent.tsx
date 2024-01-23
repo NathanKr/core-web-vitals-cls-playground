@@ -1,9 +1,12 @@
-import HeadingBig from "@/components/heading-big";
-import HeadingSmall from "@/components/heading-small";
-import ImgWithAspectRatio from "@/components/next-image-with-aspect-ratio";
+import HeadingBigFixed from "@/components/heading-big-fixed";
+import HeadingSmall from "@/components/heading-small-fixed";
+import ImgWithAspectRatio from "@/components/next-image-with-aspect-ratio-fixed-parent-width";
 import ETab from "@/types/e-tab";
-import { LOREM_100_STRING, PARENT_WITH_PX } from "@/utils/constants";
-import { infoBig, infoSmall } from "@/utils/utils";
+import { LOREM_100_STRING, PARENT_WIDTH_PX } from "@/utils/constants";
+import {
+  infoBigFixedParentWidth,
+  infoSmallFixedParentWidth,
+} from "@/utils/utils";
 import { Alert } from "@mui/material";
 
 const KeepRealAspectRatioHtmlImg = () => {
@@ -21,9 +24,9 @@ const KeepRealAspectRatioHtmlImg = () => {
         </Alert>
       </h2>
       <HeadingSmall />
-      <ImgWithAspectRatio info={infoSmall} />
-      <HeadingBig/>
-      <ImgWithAspectRatio info={infoBig} />
+      <ImgWithAspectRatio info={infoSmallFixedParentWidth} />
+      <HeadingBigFixed />
+      <ImgWithAspectRatio info={infoBigFixedParentWidth} />
       <p>{LOREM_100_STRING}</p>
     </>
   );

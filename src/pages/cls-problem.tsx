@@ -1,5 +1,5 @@
 import ETab from "@/types/e-tab";
-import { LION_IMG, LOREM_100_STRING } from "@/utils/constants";
+import { BIG_LION_IMG, LOREM_100_STRING } from "@/utils/constants";
 import Alert from "@mui/material/Alert";
 
 const ClsProblem = () => {
@@ -18,7 +18,7 @@ const ClsProblem = () => {
           </p>
         </Alert>
       </h2>
-      <img src={`/${LION_IMG}`} />
+      <img src={`/${BIG_LION_IMG}`} />
       <p>{LOREM_100_STRING}</p>
     </>
   );

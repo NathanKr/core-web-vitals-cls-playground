@@ -1,16 +1,16 @@
 import ETab from "@/types/e-tab";
 import Image from "next/image";
 import {
-  LION_IMG,
-  LION_IMG_HEIGHT_PX,
-  LION_IMG_WIDTH_PX,
+  BIG_LION_IMG,
+  BIG_LION_IMG_HEIGHT_PX,
+  BIG_LION_IMG_WIDTH_PX,
   LOREM_100_STRING,
-  PARENT_WITH_PX,
+  PARENT_WIDTH_PX,
 } from "@/utils/constants";
 import { Alert } from "@mui/material";
 
 const KeepPseudoAspectRatioNextImage = () => {
-  const aspectRatio = LION_IMG_WIDTH_PX / LION_IMG_HEIGHT_PX;
+  const aspectRatio = BIG_LION_IMG_WIDTH_PX / BIG_LION_IMG_HEIGHT_PX;
   const paddingTopPercentage = `${(100 * 1) / aspectRatio}%`;
 
   return (
@@ -25,12 +25,12 @@ const KeepPseudoAspectRatioNextImage = () => {
       <div style={{ position: "absolute" }}>
         <div
           style={{
-            width: `${PARENT_WITH_PX}px`,
+            width: `${PARENT_WIDTH_PX}px`,
             position: "relative",
             paddingTop: paddingTopPercentage,
           }}
         >
-          <Image src={`/${LION_IMG}`} alt="some title" fill={true} />
+          <Image src={`/${BIG_LION_IMG}`} alt="some title" fill={true} />
         </div>
       </div>
 

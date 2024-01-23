@@ -35,6 +35,7 @@ The pages with final solution for CLS are the last two
 
 push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check for CLS --> should be 0 and LCP which is ~ 2 sec for the next.js Image solution and img html element
 
+
 <h2>Leading questions</h2>
 So here are few questions that answers can shed light on this metric
 <ol>
@@ -91,7 +92,12 @@ This is the basic idea
 </ul>
 
 
+<h2>Fixed parent width \ Variable width</h2>
+<p>All the above relate to fixed parent width e.g 800px but this is not resaponsive in terms of the parent width</p>
+<p>to allow the parent width to be responsive you need to use max-width and providing img width is meaning less so small has the parent size not like for fixed parent width</p>
+
 <h2>Open issues</h2>
 <ul>
+<li>for fix parent it is working nicely -->how to handle variable parent width ? </li>
 <li>for both html img and next.js Image i dont get a 100 score for page speed insight 'best practices' due to 'Serves images with low resolution' currently i dont understand why - may be <a href='https://web.dev/articles/serve-responsive-images?utm_source=lighthouse&utm_medium=lr'>serve-responsive-images</a> will help</li>
 </ul>
