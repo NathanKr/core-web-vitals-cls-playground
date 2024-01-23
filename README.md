@@ -41,7 +41,7 @@ So here are few questions that answers can shed light on this metric
 <li>How to create a page with cls problem using image</li>
 <li>How to solve it by providing width and height ==> brut force might not always be enough</li>
 <li>Is it possible to solve this by providing the image aspect ratio instead of width and height</li>
-<li>How to solve the use case of img width smaller than parent without picture distortion</li>
+<li>How to solve the use case of img width smaller than parent without image distortion</li>
 <li>Does Image component of next.js make it easy to solve this problem</li>
 </ol>
 
@@ -51,9 +51,9 @@ If the image is not bound in width \ height by its parent then this is non issue
 <h2>Solution</h2>
 This is the basic idea
 <ul>
-<li>Parent side : By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
-<li>Image side : we took care of the width and height via the parent and now the image simply need to fill the parent using width 100% for html img element or fill for next.js Image component</li>
-<li>fill the parent react is ok for image width > parent width because no UI distortion in this case (infoBig) . However filling the parent in case the image width < parent width might cause distortion. To eliminate it you can bound the parent width to the image width and this is done by providing imgWidthPx in IImageWithAspectRatio  </li>
+<li><h3>Parent side</h3> By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
+<li><h3>Image side</h3> we took care of the width and height via the parent and now the image simply need to fill the parent using width 100% for html img element or fill for next.js Image component</li>
+<li><h3> image width < parent width</h3> fill the parent react is ok for image width > parent width because no UI distortion in this case (infoBig) . However filling the parent in case the image width < parent width might cause distortion. To eliminate it you can bound the parent max-width to the image width and this is done by providing imgWidthPx in IImageWithAspectRatio  </li>
 </ul>
 
 <h3>html img element</h3>
@@ -87,13 +87,11 @@ This is the basic idea
 <li>Using the css aspect-ratio property is realy helpfull when you want to keep the image aspect ratio and eliminate layout shift problem. Both will improve the UI experience </li>
 <li>You need to apply the aspect-ratio on the image bounding element from one side and instruct the image to fill its parent width and height on the other side. use 100% for html img and fill true for next.js Image component</li>
 <li>Using the above technique allow the browser to know the bounding rect before rendering and this elimeinate layput shift ==> CLS is zero in tems of core web vitals</li>
-<li>The suggested solution work nicely when the image width is bigger than the parent width (infoBig) but it also works without object-fit when the image width is smaller than the parent width (infoSmall)</li>
-<li>Altough using aspect-ratio and img we made CLS=0 , this is not true for LCP. The LCP is smaller when you replace html img with next.js Image. You may check the reasons by looking on the errors in page speed insight . one possible reason is the fact that next.js serve images in 'Image formats like WebP and AVIF often provide better compression than PNG or JPEG'. In this respect Image component of next.js is better than img html element</li>
+<li>The suggested solution work nicely when the image width is bigger than the parent width (infoBig) but it also works without object-fit when the image width is smaller than the parent width (infoSmall) and here you have two options as explained above</li>
 </ul>
 
 
 <h2>Open issues</h2>
 <ul>
-<li>Altough this solution handle a use case of image width < parent width the end result is that the image occupy the whole parent width and height and this might cause some distortion altough it is not evedance with infoSmall. I want no distortion and may achive it by limit the image width to its original width inside its container. The solution used in <a href='https://web.dev/learn/design/responsive-images'>web.dev</a> is to used object-fit but it is not working here for some reason</li>
 <li>for both html img and next.js Image i dont get a 100 score for page speed insight 'best practices' due to 'Serves images with low resolution' currently i dont understand why - may be <a href='https://web.dev/articles/serve-responsive-images?utm_source=lighthouse&utm_medium=lr'>serve-responsive-images</a> will help</li>
 </ul>

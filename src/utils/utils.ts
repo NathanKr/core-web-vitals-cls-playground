@@ -28,15 +28,15 @@ export const infoSmall: IImageWithAspectRatio = {
 export function getParentStyle(info: IImageWithAspectRatio) : CSSProperties{
   const { parentWidthPx, aspectRatio, imgWidthPx } = info;
 
-  const style: CSSProperties = {
+  const parentStyle: CSSProperties = {
     width: `${parentWidthPx}px`,
     position: "relative",
     aspectRatio: `${aspectRatio} / 1`,
   };
 
   if(imgWidthPx){
-    style.maxWidth = `${imgWidthPx}px`
+    parentStyle.maxWidth = `${imgWidthPx}px`
   }
 
-  return style;
+  return parentStyle;
 }
