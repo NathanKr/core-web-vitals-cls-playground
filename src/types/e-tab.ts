@@ -5,7 +5,7 @@ enum ETab {
   keepPseudoAspectRatioNextImage = "next.js-image-pseudo-aspect-ratio-solution-with-bound-parent",
   keepRealAspectRatioNextImage = "next.js-image-real-aspect-ratio-solution-with-bound-parent",
   keepRealAspectRatioHtmlImg = "img-aspect-ratio-solution-with-bound-parent",
-  variableParentWidth = 'variable-parent-width'
+  imgAspectRatioVariableParentWidth = 'img-aspect-ratio-variable-parent-width'
 }
 
 export default ETab;

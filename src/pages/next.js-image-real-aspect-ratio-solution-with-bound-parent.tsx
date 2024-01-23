@@ -16,7 +16,7 @@ const keepPseudoAspectRatioNextImage = () => {
       <h1>{ETab.keepPseudoAspectRatioNextImage}</h1>
       <h2>
         <Alert severity="success">
-          Use next.js Image with fill , and relative+aspect-ratio for parent ==
+          Use next.js Image with fill , and relative+aspect-ratio+width:widthPx for parent ==
           {">"} <strong>CLS</strong> ok : 0
         </Alert>
         <Alert severity="success">

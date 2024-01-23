@@ -4,8 +4,8 @@ import { infoBigVariableParentWidth } from "@/utils/utils";
 const HeadingBigVariable = () => {
   return (
     <h3>
-      <p>image width ({BIG_LION_IMG_WIDTH_PX}px)</p>
-      <p>parent max width ({infoBigVariableParentWidth.parentMaxWidthPx}px)</p>
+      image width ({BIG_LION_IMG_WIDTH_PX}px) , parent max width (
+      {infoBigVariableParentWidth.parentMaxWidthPx}px)
     </h3>
   );
 };
