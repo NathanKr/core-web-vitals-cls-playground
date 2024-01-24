@@ -17,7 +17,7 @@ import PageType from "@/types/e-page-type";
 
 const infoBigBase: IBaseImageWithAspectRatio = {
   aspectRatio: BIG_LION_IMG_WIDTH_PX / BIG_LION_IMG_HEIGHT_PX,
-  imgSrc: BIG_LION_IMG,
+  imgSrc: `/${BIG_LION_IMG}`,
   title: "big picture",
 };
 export const infoBigFixedParentWidth: IImageWithAspectRatioFixedParentWidth = {
@@ -34,7 +34,7 @@ export const infoBigVariableParentWidth: IImageWithAspectRatioVariableParentWidt
 
 const infoSmallBase: IBaseImageWithAspectRatio = {
   aspectRatio: SMALL_LION_IMG_WIDTH_PX / SMALL_LION_IMG_HEIGHT_PX,
-  imgSrc: SMALL_LION_IMG,
+  imgSrc: `/${SMALL_LION_IMG}`,
   title: "small picture",
 };
 

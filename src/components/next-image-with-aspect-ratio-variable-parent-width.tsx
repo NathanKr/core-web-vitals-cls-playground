@@ -14,7 +14,7 @@ const NextImageWithAspectRatioVariableParentWidth: FC<IProps> = ({ info }) => {
 
   return (
     <div style={parentStyle}>
-      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+      <Image src={`${imgSrc}`} alt={title} fill={true} />
     </div>
   );
 };

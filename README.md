@@ -67,7 +67,7 @@ const ImgWithAspectRatioFixedParentWidth: FC<IProps> = ({ info }) => {
 
   return (
     <div style={style}>
-      <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
+      <img style={{ width: "100%" }} src={`${imgSrc}`} alt={title} />
     </div>
   );
 };
@@ -86,7 +86,7 @@ const NextImageWithAspectRatioFixedParentWidth: FC<IProps> = ({ info }) => {
 
   return (
     <div style={style}>
-      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+      <Image src={`${imgSrc}`} alt={title} fill={true} />
     </div>
   );
 };
@@ -139,7 +139,7 @@ const NextImageWithAspectRatioVariableParentWidth: FC<IProps> = ({ info }) => {
 
   return (
     <div style={parentStyle}>
-      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+      <Image src={`${imgSrc}`} alt={title} fill={true} />
     </div>
   );
 };

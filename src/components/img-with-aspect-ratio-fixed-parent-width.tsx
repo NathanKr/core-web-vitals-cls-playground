@@ -12,7 +12,7 @@ const ImgWithAspectRatioFixedParentWidth: FC<IProps> = ({ info }) => {
 
   return (
     <div style={style}>
-      <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
+      <img style={{ width: "100%" }} src={`${imgSrc}`} alt={title} />
     </div>
   );
 };
