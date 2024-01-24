@@ -160,5 +160,6 @@ const NextImageWithAspectRatioVariableParentWidth: FC<IProps> = ({ info }) => {
 
 <h2>Open issues</h2>
 <ul>
+<li>i was able to eliminate ui distortion for small image fixed parent width. is it possible also for variable parent width</li>
 <li>for both html img and next.js Image i dont get a 100 score for page speed insight 'best practices' due to 'Serves images with low resolution' currently i dont understand why - may be <a href='https://web.dev/articles/serve-responsive-images?utm_source=lighthouse&utm_medium=lr'>serve-responsive-images</a> will help</li>
 </ul>
