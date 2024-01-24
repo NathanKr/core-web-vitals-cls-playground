@@ -1,6 +1,6 @@
 <h2>Motivation</h2>
-<p>Cumulative layout shift - CLS is a core web vitals metric and is part of page speed insight performance score. In particular image might cause layout shift when its width\height is not known to the browser before the page is rendered</p>
-<p>So the the basic question is how to do it</p>
+<p>Cumulative layout shift - CLS is a core web vitals metric and is part of page speed insight performance score. In particular image might cause layout shift when its width\height is not known to the browser before the page is rendered ---> check the tab clsProblem (url cls-problem)</p>
+<p>So the the basic question is how to eliminate layout shift</p>
 
 <h2>Installation</h2>
 
@@ -21,11 +21,11 @@ npm run dev
 
 And click on the menu for different use cases
 
-The pages with final solution for CLS are the last four
 
 <h3>Production</h3>
 
-push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check for CLS --> should be 0 and LCP which is ~ 2 sec for the next.js Image solution and img html element
+<p>Push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check the solution . CLS should be 0 </p>
+<p>Check for interesting results regarding LCP below in 'Points of Interests' 
 
 
 <h2>Leading questions</h2>
@@ -39,17 +39,26 @@ So here are few questions that answers can shed light on this metric
 </ol>
 
 <h2>Bounded width</h2>
-If the image is not bound in width \ height by its parent then this is non issue - simply provide width \ height to the img element. More interesting probem is when the parent has pre defined width ==> brut force using the img width \ height may solve the cls problem but cause the image to be distorted thus reduce the user experience and may reduce the page speed insight 'best practice' score
+<p>If the image is not bound in width \ height by its parent then this is non issue - simply provide width \ height to the img element --> check tab simpleSolution (url simple-no-parent-bound)</p> 
+More interesting probem is when the parent has pre defined width ==> brut force using the img width \ height may solve the cls problem but cause the image to be distorted thus reduce the user experience and may reduce the page speed insight 'best practice' score. check tab uiProblemWithBoundParent (url ui-problem-fixed-parent-width)
 
 <h2>Solution</h2>
-This is the basic idea
+<h3>html img elemnt</h3>
+tab aspectRatioHtmlImgFixedParent (url img-aspect-ratio-fixed-parent-width)</p>
+<h3>next.js Image component</h3>
+tab aspectRatioNextImageFixedParent (url next.js-image-aspect-ratio-fixed-parent-width)
+
+
+<h3>This is the basic idea</h3>
 <ul>
-<li><h3>Parent side</h3> By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
-<li><h3>Image side</h3> we took care of the width and height via the parent and now the image simply need to fill the parent using width 100% for html img element or fill for next.js Image component</li>
-<li><h3> image width < parent width</h3> fill the parent react is ok for image width > parent width because no UI distortion in this case (infoBig) . However filling the parent in case the image width < parent width might cause distortion. To eliminate it you can bound the parent max-width to the image width and this is done by providing imgWidthPx in IImageWithAspectRatio  </li>
+<li><h4>Parent side</h4> By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
+<li><h4>Image side</h4> we took care of the width and height via the parent and now the image simply need to fill the parent using width 100% for html img element or fill for next.js Image component</li>
+<li><h4> image width < parent width</h4> fill the parent react is ok for image width > parent width because no UI distortion in this case (infoBig) . However filling the parent in case the image width < parent width might cause distortion. To eliminate it you can bound the parent max-width to the image width and this is done by providing imgWidthPx in IImageWithAspectRatio  </li>
 </ul>
 
-<h3>html img element</h3>
+<h3>Implementation</h3>
+
+<h4>html img element</h4>
 
 ```tsx
   const { imgSrc, title } = info;
@@ -62,7 +71,7 @@ This is the basic idea
   );
 ```
 
-<h3>next.js Image component</h3>
+<h4>next.js Image component</h4>
 
 ```tsx
   const { imgSrc, title } = info;
@@ -86,7 +95,14 @@ This is the basic idea
 
 <h2>Fixed parent width \ Variable width</h2>
 <p>All the above relate to fixed parent width e.g 800px but this is not resaponsive in terms of the parent width</p>
-<p>to allow the parent width to be responsive you need to use max-width and providing img width is meaning less so small has the parent size not like for fixed parent width</p>
+<p>To allow the parent width to be responsive you need to use max-width and providing img width is meaning less so small has the parent size not like for fixed parent width</p>
+
+<h3>Relevant tabs for variable parent width</h3>
+<h4>html img element</h4>
+tab aspectRatioHtmlImgVariableParent (url img-aspect-ratio-variable-parent-width)
+
+<h4>next.js Image component</h4>
+tab aspectRatioNextImageVariableParent (url next.js-image-aspect-ratio-variable-parent-width)
 
 <h2>Points of interest</h2>
 <ul>
