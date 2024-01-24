@@ -1,3 +1,8 @@
 .container_top{
     margin-bottom: 1rem;
 }
+
+.container_top a{
+    display: inline-block;
+    margin: 3px;
+}
