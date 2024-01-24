@@ -12,6 +12,8 @@ import { CSSProperties } from "react";
 import IBaseImageWithAspectRatio from "@/types/i-base-image-with-aspect-ratio";
 import IImageWithAspectRatioVariableParentWidth from "@/types/i-image-with-aspect-ratio-variable-parent-width";
 import ETab from "@/types/e-tab";
+import IPage from "@/types/i-page";
+import PageType from "@/types/e-page-type";
 
 const infoBigBase: IBaseImageWithAspectRatio = {
   aspectRatio: BIG_LION_IMG_WIDTH_PX / BIG_LION_IMG_HEIGHT_PX,
@@ -81,33 +83,46 @@ export function getFixedParentStyle(
   return parentStyle;
 }
 
-const arPages: { key: ETab; page: string }[] = [
-  { key: ETab.proplem, page: "cls-problem" },
-  { key: ETab.simpleSolution, page: "simple-no-parent-bound" },
-  { key: ETab.uiProblemWithBoundParent, page: "ui-problem-fixed-parent-width" },
+export const pagesInfo: IPage[] = [
+  { displayName: ETab.proplem, url: "cls-problem", type: PageType.playground },
   {
-    key: ETab.pseudoAspectRatioNextImageFixedParent,
-    page: "next.js-image-pseudo-aspect-ratio-fixed-parent-width",
+    displayName: ETab.simpleSolution,
+    url: "simple-no-parent-bound",
+    type: PageType.playground,
   },
   {
-    key: ETab.aspectRatioNextImageFixedParent,
-    page: "next.js-image-aspect-ratio-fixed-parent-width",
+    displayName: ETab.uiProblemWithBoundParent,
+    url: "ui-problem-fixed-parent-width",
+    type: PageType.playground,
   },
   {
-    key: ETab.aspectRatioNextImageVariableParent,
-    page: "next.js-image-aspect-ratio-variable-parent-width",
+    displayName: ETab.pseudoAspectRatioNextImageFixedParent,
+    url: "next.js-image-pseudo-aspect-ratio-fixed-parent-width",
+    type: PageType.playground,
   },
   {
-    key: ETab.aspectRatioHtmlImgFixedParent,
-    page: "img-aspect-ratio-fixed-parent-width",
+    displayName: ETab.aspectRatioNextImageFixedParent,
+    url: "next.js-image-aspect-ratio-fixed-parent-width",
+    type: PageType.solution,
   },
   {
-    key: ETab.aspectRatioHtmlImgVariableParent,
-    page: "img-aspect-ratio-variable-parent-width",
+    displayName: ETab.aspectRatioNextImageVariableParent,
+    url: "next.js-image-aspect-ratio-variable-parent-width",
+    type: PageType.solution,
+  },
+  {
+    displayName: ETab.aspectRatioHtmlImgFixedParent,
+    url: "img-aspect-ratio-fixed-parent-width",
+    type: PageType.solution,
+  },
+  {
+    displayName: ETab.aspectRatioHtmlImgVariableParent,
+    url: "img-aspect-ratio-variable-parent-width",
+    type: PageType.solution,
   },
 ];
 
-export const mapPageNames: Map<ETab, string> = new Map();
-arPages.forEach((it) => {
-  mapPageNames.set(it.key, it.page);
-});
+// export const mapPageNames: Map<ETab, string> = new Map();
+// arPages.forEach((it) => {
+//   mapPageNames.set(it.displayName, it.page);
+// });

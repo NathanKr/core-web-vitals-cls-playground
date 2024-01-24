@@ -1,19 +1,34 @@
 import ETab from "@/types/e-tab";
 import Link from "next/link";
 import styles from "@/styles/top.module.css";
-import { mapPageNames } from "@/utils/utils";
+import { pagesInfo } from "@/utils/utils";
+import PageType from "@/types/e-page-type";
 
 const Top = () => {
-  const tabsValues: string[] = Object.values(ETab);
-  console.log(tabsValues);
+  function getElemsByType(type: PageType): JSX.Element {
+    const elemsLink = pagesInfo
+      .filter((page) => page.type == type)
+      .map((page, i) => (
+        <Link key={i} href={`/${page.url}`}>
+          {page.displayName}
+        </Link>
+      ));
+    return (
+      <>
+        <strong>{type}</strong> : {elemsLink}
+      </>
+    );
+  }
 
-  const elemsLink = tabsValues.map((tab, i) => (
-    <Link key={i} href={`/${mapPageNames.get(tab as ETab)}`}>
-      {tab}
-    </Link>
-  ));
-
-  return <div className={styles.container_top}>{elemsLink}</div>;
+  return (
+    <div className={styles.container_top}>
+      <>
+        {getElemsByType(PageType.playground)}
+        <br />
+        {getElemsByType(PageType.solution)}
+      </>
+    </div>
+  );
 };
 
 export default Top;

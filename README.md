@@ -19,17 +19,9 @@ You can also use npm
 npm run dev
 ```
 
-And click on the menu for different use cases :
-<ul>
-<li>cls-problem</li>
-<li>simple-solution-no-parent-bound</li>
-<li>ui-problem-with-bound-parent</li>
-<li>next.js-image-pseudo-aspect-ratio-solution-with-bound-parent</li>
-<li>next.js-image-real-aspect-ratio-solution-with-bound-parent</li>
-<li>img-aspect-ratio-solution-with-bound-parent</li>
-</ul>
+And click on the menu for different use cases
 
-The pages with final solution for CLS are the last two
+The pages with final solution for CLS are the last four
 
 <h3>Production</h3>
 
