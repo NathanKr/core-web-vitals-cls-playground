@@ -10,7 +10,6 @@ pnpm i
 
 You can also use npm
 
-
 <h2>Usage</h2>
 
 <h3>Development</h3>
@@ -21,12 +20,10 @@ npm run dev
 
 And click on the menu for different use cases
 
-
 <h3>Production</h3>
 
 <p>Push and take the <a href='https://core-web-vitals-cls-playground.vercel.app'>vercel url</a> and put in <a href='https://pagespeed.web.dev/'>page speed insight</a> per page and check the solution . CLS should be 0 </p>
-<p>Check for interesting results regarding LCP below in 'Points of Interests' 
-
+<p>Check for interesting results regarding LCP below in 'Points of Interests'
 
 <h2>Leading questions</h2>
 So here are few questions that answers can shed light on this metric
@@ -48,7 +45,6 @@ tab aspectRatioHtmlImgFixedParent (url img-aspect-ratio-fixed-parent-width)</p>
 <h3>next.js Image component</h3>
 tab aspectRatioNextImageFixedParent (url next.js-image-aspect-ratio-fixed-parent-width)
 
-
 <h3>This is the basic idea</h3>
 <ul>
 <li><h4>Parent side</h4> By providing the parent width and the image aspect ratio the browser can prepare the layout for the parent in terms of bounding reactangle so no layout shift</li>
@@ -61,27 +57,39 @@ tab aspectRatioNextImageFixedParent (url next.js-image-aspect-ratio-fixed-parent
 <h4>html img element</h4>
 
 ```tsx
+interface IProps {
+  info: IImageWithAspectRatioFixedParentWidth;
+}
+
+const ImgWithAspectRatioFixedParentWidth: FC<IProps> = ({ info }) => {
   const { imgSrc, title } = info;
-  const style = getParentStyle(info);
+  const style = getFixedParentStyle(info);
 
   return (
     <div style={style}>
       <img style={{ width: "100%" }} src={`/${imgSrc}`} alt={title} />
     </div>
   );
+};
 ```
 
 <h4>next.js Image component</h4>
 
 ```tsx
+interface IProps {
+  info: IImageWithAspectRatioFixedParentWidth;
+}
+
+const NextImageWithAspectRatioFixedParentWidth: FC<IProps> = ({ info }) => {
   const { imgSrc, title } = info;
-  const style = getParentStyle(info);
+  const style = getFixedParentStyle(info);
 
   return (
     <div style={style}>
       <Image src={`/${imgSrc}`} alt={title} fill={true} />
     </div>
   );
+};
 ```
 
 <h2>Conclusions</h2>
@@ -92,17 +100,50 @@ tab aspectRatioNextImageFixedParent (url next.js-image-aspect-ratio-fixed-parent
 <li>The suggested solution work nicely when the image width is bigger than the parent width (infoBig) but it also works without object-fit when the image width is smaller than the parent width (infoSmall) and here you have two options as explained above</li>
 </ul>
 
-
 <h2>Fixed parent width \ Variable width</h2>
-<p>All the above relate to fixed parent width e.g 800px but this is not resaponsive in terms of the parent width</p>
+<p>All the above relate to fixed parent width e.g 800px but this is not responsive in terms of the parent width</p>
 <p>To allow the parent width to be responsive you need to use max-width and providing img width is meaning less so small has the parent size not like for fixed parent width</p>
 
 <h3>Relevant tabs for variable parent width</h3>
 <h4>html img element</h4>
 tab aspectRatioHtmlImgVariableParent (url img-aspect-ratio-variable-parent-width)
 
+```tsx
+interface IProps {
+  info: IImageWithAspectRatioVariableParentWidth;
+}
+
+const ImgWithAspectRatioVariableParentWidth: FC<IProps> = ({ info }) => {
+  const { imgSrc, title } = info;
+  const parentStyle = getVariableParentStyle(info);
+  
+  return (
+    <div style={parentStyle}>
+      <img style={{ width: "100%" }} src={imgSrc} alt={title} />
+    </div>
+  );
+};
+```
+
 <h4>next.js Image component</h4>
 tab aspectRatioNextImageVariableParent (url next.js-image-aspect-ratio-variable-parent-width)
+
+```tsx
+interface IProps {
+  info: IImageWithAspectRatioVariableParentWidth;
+}
+
+const NextImageWithAspectRatioVariableParentWidth: FC<IProps> = ({ info }) => {
+  const { imgSrc, title } = info;
+  const parentStyle = getVariableParentStyle(info);
+
+  return (
+    <div style={parentStyle}>
+      <Image src={`/${imgSrc}`} alt={title} fill={true} />
+    </div>
+  );
+};
+```
 
 <h2>Points of interest</h2>
 <ul>
@@ -116,7 +157,6 @@ tab aspectRatioNextImageVariableParent (url next.js-image-aspect-ratio-variable-
 <img src='/figs/average-lcp.png'/>
 </li>
 </ul>
-
 
 <h2>Open issues</h2>
 <ul>
